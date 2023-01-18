@@ -7,21 +7,21 @@ export const users = [
   {
     name: "Adam Małysz",
     attendance: "31%",
-    average: "2.0",
+    average: "2.3",
   },
   {
     name: "Anna Kunicka",
     attendance: "100%",
-    average: "6.2",
+    average: "2.3",
   },
   {
     name: "Jacek Karlicki",
     attendance: "18%",
-    average: "1.3",
+    average: "2.3",
   },
   {
     name: "Marcin Najman",
     attendance: "1%",
-    average: "1.0",
+    average: "2.3",
   },
 ];

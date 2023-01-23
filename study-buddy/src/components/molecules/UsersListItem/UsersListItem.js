@@ -1,20 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { ReactComponent as DeletedIcon } from "../../../assets/icons/delete-icon.svg";
-import StyledButton from "../../atoms/Button/Button";
 import { StyledAverage, StyledInfo, Wrapper } from "./UserListItem.styles";
+import Button from "components/atoms/Button/Button";
 
-const UsersListItem = ({ userData: { average, name, attendance } }) => (
+const showIndex = (index) => alert(`This is student ${index + 1}`);
+
+const UsersListItem = ({ index, userData: { average, name, attendance } }) => (
   <Wrapper>
-    {/* {console.log(props)} */}
     <StyledAverage value={average}>{average}</StyledAverage>
     <StyledInfo>
-      <p>{name}</p>
+      <p>
+        {name}
+        <Button onClick={() => showIndex(index)} />
+      </p>
+
       <p>attendance:{attendance}</p>
     </StyledInfo>
-    <StyledButton>
-      <DeletedIcon />
-    </StyledButton>
   </Wrapper>
 );
 

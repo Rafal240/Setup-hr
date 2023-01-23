@@ -1,13 +1,24 @@
 import React from "react";
+import UsersList from "components/organisms/UsersList/UsersList";
+import styled, { ThemeProvider } from "styled-components";
+import { GlobalStyle } from "../assets/styles/GlobalStyle";
+import { theme } from "../assets/styles/theme";
 
-import UsersList from "components/UsersList/UsersList";
-
-const App = () => {
-  return (
-    <>
+const Wrapper = styled.div`
+  background-color: ${({ theme }) => theme.colors.grey};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+`;
+const App = () => (
+  <ThemeProvider theme={theme}>
+    <GlobalStyle />
+    <Wrapper>
       <UsersList />
-    </>
-  );
-};
+    </Wrapper>
+  </ThemeProvider>
+);
 
 export default App;

@@ -1,20 +1,14 @@
 import React, { useState } from "react";
-import UsersList from "components/organisms/UsersList/UsersList";
-import styled, { ThemeProvider } from "styled-components";
+import { Wrapper } from "./App.styles";
+import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "../assets/styles/GlobalStyle";
 import { theme } from "../assets/styles/theme";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { users as usersData } from "data/users";
-import Form from "components/organisms/Form/Form";
+import AddUser from "../views/AddUser";
+import { MainTemplate } from "components/templates/MainTemplate";
+import Dashboard from "./Dashboard";
 
-const Wrapper = styled.div`
-  background-color: ${({ theme }) => theme.colors.grey};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
-`;
 const initialFormState = {
   name: "",
   attendance: "",
@@ -53,20 +47,22 @@ const App = () => {
     <Router>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <Wrapper>
-          <nav>
-            <Link to="/">Home</Link>
-            <Link to="/add-user">Add user</Link>
-          </nav>
-          <Routes>
-            <Route
-              exact
-              path="/add-user"
-              element={<Form formValues={formValues} handleAddUser={handleAddUser} handleInputChange={handleInputChange} />}
-            ></Route>
-            <Route exact path="/" element={<UsersList deleteUser={deleteUser} users={users} />}></Route>
-          </Routes>
-        </Wrapper>
+        <MainTemplate>
+          <Wrapper>
+            <nav>
+              <Link to="/"></Link>
+              <Link to="/add-user"></Link>
+            </nav>
+            <Routes>
+              <Route
+                exact
+                path="/add-user"
+                element={<AddUser formValues={formValues} handleAddUser={handleAddUser} handleInputChange={handleInputChange} />}
+              ></Route>
+              <Route exact path="/" element={<Dashboard deleteUser={deleteUser} users={users} />}></Route>
+            </Routes>
+          </Wrapper>
+        </MainTemplate>
       </ThemeProvider>
     </Router>
   );

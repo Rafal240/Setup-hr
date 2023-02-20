@@ -5,13 +5,16 @@ import UsersListItem from "components/molecules/UsersListItem/UsersListItem";
 import { StyledList } from "./UserList.styles";
 import { Title } from "components/atoms/Title.js/Title";
 
-const UsersList = ({ users, deleteUser }) => {
+const UsersList = ({ users }) => {
   return (
     <>
       <Title>Student List</Title>
       <StyledList>
         {users.map((userData) => (
-          <UsersListItem deleteUser={deleteUser} key={userData.name} userData={userData} />
+          // gdzie postawic console loga dla userData czemu czasami sa w nawiasacg klamrowych
+          // nawiasy klamrowe i return
+
+          <UsersListItem key={userData.name} userData={userData} />
         ))}
       </StyledList>
     </>

@@ -16,8 +16,8 @@ export const users = [
   },
   {
     name: "Jacek Karlicki",
-    attendance: "18%",
-    average: "3.5",
+    attendance: "55%",
+    average: "4.5",
   },
   {
     name: "Marcin Najman",

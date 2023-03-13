@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Input = styled.input`
   padding: 5px 8px;
-  border: 1px solid ${({ theme }) => theme.colors.lightPurple};
+  border: 1px solid ${({ theme }) => theme.colors.darkGrey};
   box-sizing: border-box;
   border-radius: 25px;
 

@@ -15,6 +15,7 @@ describe("Form Field", () => {
     fireEvent.change(screen.getByTestId("Name"), { target: { value: "Andrzej" } });
     fireEvent.change(screen.getByTestId("Attendance"), { target: { value: "35%" } });
     fireEvent.change(screen.getByTestId("Average"), { target: { value: "3.5" } });
+    fireEvent.click(screen.getByTestId("Consent"));
     fireEvent.click(screen.getByText("Add"));
     screen.getByText("Andrzej");
   });

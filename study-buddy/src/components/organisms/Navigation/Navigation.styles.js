@@ -5,9 +5,11 @@ export const Wrapper = styled.nav`
   height: 100%;
   display: flex;
   flex-direction: column;
+  background-color: ${({ theme }) => theme.colors.darkPurple};
   justify-content: flex-start;
   padding: 30px 0;
-  background-color: ${({ theme }) => theme.colors.darkPurple};
+  grid-row: 1 / 3;
+  grid-column: 1/ 1;
 `;
 export const Logo = styled.div`
   background-color: ${({ theme }) => theme.colors.darkGrey};
